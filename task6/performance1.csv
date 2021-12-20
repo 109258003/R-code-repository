@@ -1,0 +1,8 @@
+set,training,validation,testing
+fold1,0.7,0.69,0.69
+fold2,0.7,0.7,0.69
+fold3,0.7,0.7,0.7
+fold4,0.7,0.7,0.7
+fold5,0.7,0.7,0.7
+ave.,0.7,0.7,0.7
+highest k,fold1,fold2,fold3
