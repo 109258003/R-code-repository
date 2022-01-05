@@ -1,4 +1,4 @@
-# hw3. predict protein subcellular localization
+# task3. predict protein subcellular localization
 
 ## Description
 Perform k-fold cross-validation for protein subcellular localization problem.
