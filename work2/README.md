@@ -1,7 +1,6 @@
-# hw2 :  evalute a mode for predicting loans that are about to default
+# work2
 
-### Name: [張竣凱]
-### Student ID: [109258003]
+## evalute a mode for predicting loans that are about to default
 
 ## cmd
 
@@ -58,22 +57,3 @@ Rscript hw2_109258003.R --target bad --badthre 0.4 --input examples/method1.csv 
 Rscript hw2_109258003.R --target good --badthre 0.6 --input examples/method2.csv examples/method4.csv examples/method6.csv --output examples/output3.csv
 ```
 
-## Scores
-
-**Please use R version 3.6.3**
-
-5 testing data
-
-Correct answer gets 18 points of each testing data.
-**Please do not set input/output in your local path or URL.** 
-Otherwise, your code will fail due to fixed path problem.
-
-## Bonus
-
-- Output format without “: 3 points
-- Number in 2 digitals : 3 points
-- Concise file name without path: 4 points
-
-## Penalty
-- Can not detect missing --input/--ouptut flag
-- -2 points of each problem
