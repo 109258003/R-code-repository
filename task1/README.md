@@ -1,4 +1,6 @@
-# work1 : find the maximum value of weight and height
+# work1
+
+## find the maximum value of weight and height
 
 ## Read an input file
 
