@@ -1,10 +1,5 @@
 # hw3. predict protein subcellular localization
 
-![PredictProtein](/images/img1.png)
-
-### Name: [張竣凱]
-### Student ID: [109258003]
-
 ## Description
 Perform k-fold cross-validation for protein subcellular localization problem.
 
@@ -14,9 +9,6 @@ Rscript hw3_studentID.R --fold k --input Archaeal_tfpssm.csv --output performanc
 ```
 * Perform *k*-fold cross-validation
 * % of training, % of calibration, % of testing= *k*-2, 1, 1
-
-The following shows the example of the 5-fold cross validation.
-![cross-validation](/images/img2.png)
 
 ## Input: Archaeal_tfpssm.csv
 
@@ -32,27 +24,6 @@ V2: labels of proteins
 * IM: Inner membrane
 
 V3 ~ V5602: the gapped-dipeptide features of each protein
-
-### Code for reference
-
-```R
-library('rpart')
-# read input data
-d <- read.csv(<Path to Archaeal_tfpssm.csv>, header = F)
-# label to be predicted
-levels(d[,2])
-head(d[,5600:5603])
-# select subset of the data
-tmp <- d[c(seq(1,700,25), seq(700,800,5)),]
-# model using decision tree
-model <- rpart(V2 ~ V3 + V4 + V5600 + V5601 + V5602,
-               data=tmp, control=rpart.control(maxdepth=4),
-               method="class")
-# make confusion matrix tabel
-resultframe <- data.frame(truth=tmp$V2,
-                          pred=predict(model, type="class"))
-(rtab <- table(resultframe)) 
-```
 
 ## Model
 
@@ -72,36 +43,3 @@ fold4|0.91|0.89|0.87
 fold5|0.90|0.92|0.87
 ave.|0.92|0.91|0.88
 
-## Score
-
-**Please use R version 3.6.3**
-
-* 6 testing cmds from 5-fold to 10-fold
-```R
-Rscript hw3_studentID.R --fold 5 --input Archaeal_tfpssm.csv --output hw3/your_ID/output1.csv
-...
-Rscript hw3_studentID.R --fold 10 --input Archaeal_tfpssm.csv --output hw3/your_ID/output6.csv
-```
-Each testing cmd gets 15 points.
-**Please do not set input/output in your local path or URL.** 
-Otherwise, your code will fail due to fixed path problem.
-* execution time: 1 hour maximum
-
-
-## Bonus : max 10 points
-* Round number to two decimal places: 1 points
-* Without “”: 1 points
-* Performance Bonus: average TRAINING accuracy
-  * 0.99 ~: 5 points
-  * 0.95 ~ 0.99: 4 points
-  * 0.90 ~ 0.95: 3 points
-  * 0.80 ~ 0.90: 2 points
-* Performance Bonus: average TESTING accuracy
-  * 0.99 ~: 5 points
-  * 0.95 ~ 0.99: 4 points
-  * 0.90 ~ 0.95: 3 points
-  * 0.80 ~ 0.90: 2 points
-
-## References
-* Chang, J.-M. M. et al. (2013) [Efficient and interpretable prediction of protein functional classes by correspondence analysis and compact set relations](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0075542). *PLoS ONE* 8, e75542.
-* Chang J-M, Su EC-Y, Lo A, Chiu H-S, Sung T-Y, & Hsu W-L (2008) [PSLDoc: Protein subcellular localization prediction based on gapped-dipeptides and probabilistic latent semantic analysis](https://onlinelibrary.wiley.com/doi/full/10.1002/prot.21944). *Proteins: Structure, Function, and Bioinformatics* 72(2):693-710.
