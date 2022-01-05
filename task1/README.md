@@ -1,3 +1,5 @@
+# work1 : find the maximum value of weight and height
+
 ## Read an input file
 
 Input data will have other numeric & category columns besides weight and height.
