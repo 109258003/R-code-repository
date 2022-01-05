@@ -1,4 +1,6 @@
-# work2 :  evalute a mode for predicting loans that are about to default
+# work2
+
+## evalute a mode for predicting loans that are about to default
 
 ## cmd
 
